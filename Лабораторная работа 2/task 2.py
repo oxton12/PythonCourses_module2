@@ -29,10 +29,12 @@ class Book:
 # TODO написать класс Library
 class Library:
     def __init__(self, books=None):
+        if books is None:
+            books = []
         self.books = books
 
     def get_next_book_id(self):
-        if self.books is None:
+        if not self.books:
             return 1
         else:
             return self.books[-1].id + 1
